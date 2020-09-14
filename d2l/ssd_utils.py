@@ -22,7 +22,6 @@ from collections import namedtuple
 import cv2
 from IPython import display
 
-
 ##################################### Display Functions #################################################
 
 # Defined in file: ./chapter_crashcourse/probability.md
@@ -597,7 +596,7 @@ def MultiBoxTarget(class_true, bb_true, anchors):
     
     for j in range(len(overlap_list)):
         overlap = overlap_list[j]
-        class_target[overlap] = class_true[j, 0]
+        class_target[overlap] = class_true[j, 0].type(torch.LongTensor)
         overlap_coordinates[overlap] = 1.
         
         
