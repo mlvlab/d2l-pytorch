@@ -15,7 +15,7 @@ RUN mkdir /.config && chmod a+rwx /.config
 RUN mkdir /.cache && chmod a+rwx /.cache
 RUN mkdir /.pytorch && chmod a+rwx /.pytorch
 # Install tex for enable pdf print using tex.
-RUN apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-fonts-recommended texlive-generic-recommended
+RUN apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-fonts-recommended texlive-generic-recommended inkscape
 RUN apt-get autoremove -y
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
