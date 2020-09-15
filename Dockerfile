@@ -10,7 +10,7 @@ RUN mkdir /.jupyter && chmod a+rwx /.jupyter
 # Install libraries.
 RUN pip install --no-cache-dir matplotlib Pillow opencv-python
 RUN pip install --no-cache-dir tqdm pandas
-RUN apt-get update && apt-get install -y libglu1
+RUN apt-get install -y libglu1
 RUN mkdir /.config && chmod a+rwx /.config
 RUN mkdir /.cache && chmod a+rwx /.cache
 RUN mkdir /.pytorch && chmod a+rwx /.pytorch
