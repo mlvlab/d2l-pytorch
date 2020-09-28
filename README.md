@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="60%" src="/img/d2l-pytorch.png" />
+  <img width="60%" src="./img/d2l-pytorch.png" />
 </p>
 
 -----------------------------------------------------------------------------------------------------------
@@ -21,6 +21,20 @@ Prerequisite: Anaconda. Many of you will have it installed from classes such as 
 ### Setting the Environment
   ```pip install -r requirements.txt```
 
+## Docker
+To make you set up the environment easy, a docker image is offered. You need Docker installed in your system to use this method for setting up the environment. If you haven't installed Docker, please see [here](https://docs.docker.com/get-docker/).
+
+### Build Docker Image
+  ```docker build . --tag d2l-pytorch```
+
+### Make Docker Container
+  ```docker --rm -t -u $(id -u):$(id -v) -v $(pwd)/playground:/workspace/playground -p 8888:8888 d2l-pytorch```
+  * `--rm`: Automatically delete the container after use.
+  * `-t`: Enable passing inputs, such as `ctrl-c`, into the container.
+  * `-u $(id -v):$(id -g)`: To make created files inside the container with user access authority.
+  * `-v $(pwd)/playground:/workspace/playground`: Mount `$(pwd)/playground` (assuming your own codes located at here) in the host machine to `/workspace/playground` in the container.
+  * `-p 8888:8888`: Forward `8888` port.
+  * `d2l-pytorch`: A docker image that the container created from, which is created above.
 
 ## Chapters
 
